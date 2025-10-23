@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f9; padding: 20px; }
+    form { background: white; padding: 20px; border-radius: 10px; width: 300px; margin: auto; }
+    input, button { width: 100%; padding: 10px; margin: 8px 0; }
+    button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>Event Registration</h2>
+  <form id="registerForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <button type="submit">Register</button>
+  </form>
+  <p id="message"></p>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('message').innerText = "Thank you for registering!";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
